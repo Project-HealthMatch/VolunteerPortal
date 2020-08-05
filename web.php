@@ -359,13 +359,14 @@ $conn = mysqli_connect("localhost","root","root", "volunteerweb");
                       {
 
                        echo $row['email'];
+                       echo ',';
 
 
                       }
 
                     }
 
- echo "<br>";
+
 
                }
 
