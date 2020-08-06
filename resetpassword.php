@@ -2,7 +2,7 @@
 session_start();
 
 
-$con = new mysqli("localhost","root","root","volunteerweb");
+$con = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
 if (isset($_POST['submit'])){
 
   $email = $_POST['email'];
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])){
 
  $sql = "UPDATE login SET pasword ='$new' WHERE email='$email'";
 if(mysqli_query($con, $sql)){
-    echo " Your password was updated successfully.";
+   echo '<script>alert("Password Update Successfully!")</script>'; 
 
 } else {
     echo "ERROR: new passwords dont match $sql. " . mysqli_error($con);
@@ -49,10 +49,10 @@ mysqli_close($con);
 
          }
      else{
-       echo "<h2> INVALID ORIGINAL PASSWORD</h2>";
+       echo '<script>alert("Old Password is incorrect!")</script>'; 
             }}
     else{
-    echo "<h2>invalid Email</h2>";
+  echo '<script>alert("Invalid username!")</script>'; 
     }
 
 
