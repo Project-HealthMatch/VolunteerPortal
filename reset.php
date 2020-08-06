@@ -13,8 +13,7 @@
        padding: 0;
       }
       body {
-    background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
-        background-image: linear-gradient(to top, #adece9 0%, #9ba0da 100%);
+      background-color: #c3dae9;
 
 
         font-family: "Montserrat", sans-serif;
@@ -208,9 +207,7 @@ padding-right:27% ;
       @media (min-width: 800px) {
 
          form {
-        background: #111;
-        border: 1px solid #191919;
-        border-radius: 0.4em;
+       
         bottom: 0;
         box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
         height: 50%;
@@ -226,11 +223,11 @@ padding-right:27% ;
       }
       
         form {
-          background: #111;
-          border: 1px solid #191919;
+          background: rgb(207, 155, 241);
+        
           border-radius: 0.4em;
           bottom: 0;
-          box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 4px black;
           height: 300px;
           left: 0;
           margin: auto;
@@ -258,10 +255,7 @@ padding-right:27% ;
         display: block;
       }
 
-body{
-    background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
-        background-image: linear-gradient(to top, #adece9 0%, #9ba0da 100%);
-}
+
 
     </style>
   </head>
