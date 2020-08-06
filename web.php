@@ -297,7 +297,7 @@ session_start();
      $PreferredContactMethod =  $_POST['PreferredContactMethod'];
 
 
-     $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
+      $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
      if($conn->connect_error)
      {
        die('connection failed :' .$conn->connect_error);
@@ -391,6 +391,7 @@ $conn = mysqli_connect("localhost","root","root", "volunteerweb");
       </button></div>
       </form>
 <div style="text-align: center;" id="initiallyHiddenBlock" class="margin">
+<br>
       <h1>Submitted!</h1>
 </div>
 <script>
