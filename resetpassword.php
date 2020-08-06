@@ -1,72 +1,53 @@
 <?php
-session_start();
 
+error_reporting(0);
+$email = $_POST['email'];
+$password = $_POST['password'];
+$new = $_POST['new'];
+$conf = $_POST['conf'];
 
-$con = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
-if (isset($_POST['submit'])){
+$conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
 
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  $new= $_POST['new'];
-  $conf = $_POST['conf'];
+  if($conn->connect_error){
 
-  if($new == $conf){
-   
+    die("Failed to connect :".$con->connect_error);
+                          }
+else{
+    $stmt = $conn->prepare("select * from login where email= ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt_result = $stmt->get_result();
+       if($stmt_result ->num_rows > 0)
+          {$data = $stmt_result->fetch_assoc();
+      if($data['pasword'] == $password)
+          {if($new == $conf)
+           $sql = "UPDATE login SET pasword='$new' WHERE email='$email'";
+
+if (mysqli_query($conn, $sql))
+  {  echo '<script>alert("Password Update Successfully!")</script>';
+
   }
-  else {
-    die('password dont match');
-  }
-
-
-
-  $email_search = " select * from login where email= '$email'";
-  $query = mysqli_query($con,$email_search);
-
-  $email_count = mysqli_num_rows($query);
-
-
-
-
-      if($email_count){
-
-        $email_pass = mysqli_fetch_assoc($query);
-        $db_pass = $email_pass['pasword'];
-
-
-
- $sql = "UPDATE login SET pasword ='$new' WHERE email='$email'";
-if(mysqli_query($con, $sql)){
-    echo '<script>alert("Password Update Successfully!")</script>'; 
-header("Location: dashboard.php");
-
-
-}else {
-echo '<script>alert("Passwords do not match")</script>'; 
+else {
+echo '<script>alert("Passwords do not match")</script>';
 
      }
 
-
-// Close connection
-mysqli_close($con);
-
+        mysqli_close($conn);
+          }
 
 
-         }
-     
     else{
-      echo '<script>alert("Old Password is incorrect!")</script>'; 
+      echo '<script>alert("Old Password is incorrect!")</script>';
 
          }
                                     }
 
     else{
-    echo '<script>alert("Invalid username!")</script>'; 
+    echo '<script>alert("Invalid username!")</script>';
 
         }
 
 
-    
-
-
+ }
 
 ?>
