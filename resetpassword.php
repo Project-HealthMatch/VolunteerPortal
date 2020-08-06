@@ -12,7 +12,7 @@ $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@he
 
   if($conn->connect_error){
 
-    die("Failed to connect :".$con->connect_error);
+    die("Failed to connect :".$conn->connect_error);
                           }
 else{
     $stmt = $conn->prepare("select * from login where email= ?");
