@@ -1,18 +1,16 @@
 <?php
 
-session_start();
-
 error_reporting(0);
 $email = $_POST['email'];
 $password = $_POST['password'];
 $new = $_POST['new'];
 $conf = $_POST['conf'];
 
-$conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
 
+  $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
   if($conn->connect_error){
 
-    die("Failed to connect :".$conn->connect_error);
+    die("Failed to connect :".$con->connect_error);
                           }
 else{
     $stmt = $conn->prepare("select * from login where email= ?");
@@ -27,7 +25,7 @@ else{
 
 if (mysqli_query($conn, $sql))
   {  echo '<script>alert("Password Update Successfully!")</script>';
-header("Location:dashboard.php");
+
   }
 else {
 echo '<script>alert("Passwords do not match")</script>';
