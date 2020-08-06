@@ -297,7 +297,7 @@ session_start();
      $PreferredContactMethod =  $_POST['PreferredContactMethod'];
 
 
-     $conn = new mysqli("localhost","root","root","volunteerweb");
+     $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","volunteerweb");
      if($conn->connect_error)
      {
        die('connection failed :' .$conn->connect_error);
