@@ -341,7 +341,7 @@ session_start();
 <input type="text" class="form-control" name="Volunteers" value=
        "<?php
 
-$conn = mysqli_connect("localhost","root","root", "volunteerweb");
+ $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
 
 
        $sql = "SELECT * FROM login where Timezone = '$Timezone' ";
