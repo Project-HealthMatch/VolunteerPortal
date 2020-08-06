@@ -6,7 +6,7 @@ session_start();
 
 
 
-  $con = new mysqli("localhost","root","root","volunteerweb");
+  $con = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","volunteerweb");
   if($con->connect_error){
 
     die("Failed to connect :".$con->connect_error);
