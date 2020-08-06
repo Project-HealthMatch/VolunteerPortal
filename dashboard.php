@@ -297,6 +297,15 @@ i{
        border: solid 0.05rem black;
      }
 
+.languagegrid{
+      	display: grid;
+
+      padding-left: 45rem;
+      padding-right: 45rem;
+   
+      grid-template-columns: 1fr 1fr 1fr 1fr ;
+      grid-template-rows: 1fr;
+      }
 
 
 }
@@ -307,14 +316,9 @@ i{
 		     border-radius: 5px;
       }
 
-      .languagegrid{
-      	display: grid;
-
-      padding-left: 2rem;
-      padding-right: 2rem;
-      column-gap: 0.25rem;
-      grid-template-columns: 1fr 1fr 1fr 1fr ;
-      grid-template-rows: 1fr;
+      
+      td{
+        font-size: 2.5rem;
       }
 
 
