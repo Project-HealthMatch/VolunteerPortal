@@ -1,4 +1,3 @@
-
 <?
 session_start();
 
@@ -6,9 +5,10 @@ if($_SESSION["user"]==true){
 
 }
 else{
-    header("Location: index.html");
+    header("Location: index.php");
 }
 ?>
+
 
 
 
@@ -141,14 +141,14 @@ select {
     margin: 0;
     }
 
-    
+
 
       @media(max-width:900px){
 
       .logo{
           width: 40%;
       margin:0;
-    
+
       }
     nav{
       margin: 0;
@@ -157,16 +157,16 @@ select {
       margin: 0;
     }
 
-  
+
 
     .select{
      height: 45px;
     margin: 0;
     }
 
-   
 
-   
+
+
       }
 
 
@@ -219,12 +219,14 @@ padding-right:27% ;
 }
 
 
-     
+
 
       @media (min-width: 800px) {
 
          form {
-       
+        background: #111;
+        border: 1px solid #191919;
+        border-radius: 0.4em;
         bottom: 0;
         box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
         height: 50%;
@@ -238,13 +240,13 @@ padding-right:27% ;
         padding: 3rem;
         margin-top: 10rem;
       }
-      
+
         form {
-          background: rgb(207, 155, 241);
-        
+          background: #111;
+          border: 1px solid #191919;
           border-radius: 0.4em;
           bottom: 0;
-          box-shadow: 1px 1px 4px black;
+          box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
           height: 300px;
           left: 0;
           margin: auto;
@@ -287,14 +289,14 @@ padding-right:27% ;
 <br>
 
     <div class="container" id="container">
-    
+
       <div class="form-container sign-up-container">
-         
+
          <br>
         <form action="resetpassword.php" method="POST">
-           
-     
-            <input id="Email" name="username" type="text" placeholder="Username" />
+
+
+            <input id="Email" name="email" type="text" placeholder="Email" />
             <input id="Password" name="password" type="password" placeholder="Enter Old Password" />
             <input id="newf" name="new" type="newf" placeholder="Enter New Password" />
             <input id=conf name="conf" type="conf" placeholder="Confirm New Password" />
