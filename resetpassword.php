@@ -25,7 +25,7 @@ else{
 
 if (mysqli_query($conn, $sql))
   {  echo '<script>alert("Password Update Successfully!")</script>';
-   header("Location"dashboard.php");
+   header("Location:dashboard.php");
 
   }
 else {
