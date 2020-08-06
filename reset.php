@@ -5,7 +5,7 @@ if($_SESSION["user"]==true){
 
 }
 else{
-    header("Location: index.php");
+    header("Location: index.html");
 }
 ?>
 
@@ -224,8 +224,7 @@ padding-right:27% ;
       @media (min-width: 800px) {
 
          form {
-        background: #111;
-        border: 1px solid #191919;
+      
         border-radius: 0.4em;
         bottom: 0;
         box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
@@ -242,8 +241,8 @@ padding-right:27% ;
       }
 
         form {
-          background: #111;
-          border: 1px solid #191919;
+          background: #bc94dc;
+       
           border-radius: 0.4em;
           bottom: 0;
           box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
