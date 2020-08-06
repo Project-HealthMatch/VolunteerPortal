@@ -37,24 +37,29 @@ if (isset($_POST['submit'])){
  $sql = "UPDATE login SET pasword ='$new' WHERE email='$email'";
 if(mysqli_query($con, $sql)){
    echo '<script>alert("Password Update Successfully!")</script>'; 
+   header("Location:dashboard.php");
 
 } else {
-    echo "ERROR: new passwords dont match $sql. " . mysqli_error($con);
-}
+echo '<script>alert("Passwords do not match")</script>'; 
 
-// Close connection
-mysqli_close($con);
+     }
+
+        mysqli_close($con);
+          }
 
 
+    else{
+      echo '<script>alert("Old Password is incorrect!")</script>'; 
 
          }
-     else{
-       echo '<script>alert("Old Password is incorrect!")</script>'; 
-            }}
+                                    }
+
     else{
-  echo '<script>alert("Invalid username!")</script>'; 
-    }
+    echo '<script>alert("Invalid username!")</script>'; 
+
+        }
 
 
+ 
 
 ?>
