@@ -341,7 +341,7 @@ session_start();
 <input type="text" class="form-control" name="Volunteers" value=
        "<?php
 
-$conn = mysqli_connect("localhost","root","root", "volunteerweb");
+$conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
 
 
        $sql = "SELECT * FROM login where Timezone = '$Timezone' ";
@@ -385,7 +385,7 @@ $conn = mysqli_connect("localhost","root","root", "volunteerweb");
 
      }
 ;?>"readonly>
-<div style="text-align: center;"> <button class ="acceptbtn":hover name="submit"  id="showHiddenBlock" >Proceed
+<div style="text-align: center;"> <button class ="acceptbtn":hover name="submit"  id="showHiddenBlock" >CONFIRM
 
 
       </button></div>
