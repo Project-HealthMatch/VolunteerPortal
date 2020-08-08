@@ -1480,7 +1480,7 @@ body {
         <img src="logo.png" class="logo">
         </div>
 
-                    <form action="web.php" method="POST" autocomplete="off">
+                    <form action="process.php" method="POST" autocomplete="off">
                   <div class="readonly">
                   <input type="text" class="form-control" id="date"
       name = "date" value = "<?php echo $_POST['date'];?>" readonly>
