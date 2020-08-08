@@ -288,11 +288,13 @@ body {
 session_start();
      $FirstName = $_POST['FirstName'];
      $LastName= $_POST['LastName'];
+	   $Languages = $_POST['Languages'];
      $Timezone =  $_POST['Timezone'];
-    
+     $countryCode= $_POST['countryCode'];
+     $Phone = $_POST['Phone'];
      $Email = $_POST['Email'];
      $Gender = $_POST['Gender'];
-     $Languages = $_POST['Languages'];
+    
     
 
 
@@ -305,10 +307,10 @@ session_start();
      else
 
      {
-       $stmt = $conn->prepare("insert into uservolunteer(FirstName, LastName, Timezone,  Email, Gender, Languages)
-       values(?, ?, ?, ?, ?, ?)");
+       $stmt = $conn->prepare("insert into uservolunteer(FirstName, LastName,Languages, Timezone, countryCode, Phone, Email, Gender )
+       values(?, ?, ?, ?, ?, ?, ?, ?)");
 
-       $stmt->bind_param("ssssss",$FirstName, $LastName, $Timezone, $Email, $Gender, $Languages);
+       $stmt->bind_param("ssssssss",$FirstName, $LastName,  $Languages,$Timezone, $countryCode, $Phone, $Email, $Gender);
        $stmt->execute();
 
               $stmt->close();
@@ -326,8 +328,8 @@ session_start();
      <input type="email" class="form-control"
     name = "Email" value = "<?php echo $_POST['Email'];?>" readonly>
     <br>
+   
  
-<div style="text-align:center">
     <h2>Available Volunteers:</h2>
     </div>
 <input type="text" class="form-control" name="Volunteers" value=
