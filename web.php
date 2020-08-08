@@ -289,12 +289,11 @@ session_start();
      $FirstName = $_POST['FirstName'];
      $LastName= $_POST['LastName'];
      $Timezone =  $_POST['Timezone'];
-     $countryCode= $_POST['countryCode'];
-     $Phone = $_POST['Phone'];
+    
      $Email = $_POST['Email'];
      $Gender = $_POST['Gender'];
      $Languages = $_POST['Languages'];
-     $PreferredContactMethod =  $_POST['PreferredContactMethod'];
+    
 
 
       $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
@@ -306,10 +305,10 @@ session_start();
      else
 
      {
-       $stmt = $conn->prepare("insert into uservolunteer(FirstName, LastName, Timezone, countryCode, Phone, Email, Gender, Languages, PreferredContactMethod)
-       values(?, ?, ?, ?, ?, ?, ?, ?, ?)");
+       $stmt = $conn->prepare("insert into uservolunteer(FirstName, LastName, Timezone,  Email, Gender, Languages)
+       values(?, ?, ?, ?, ?, ?)");
 
-       $stmt->bind_param("sssssssss",$FirstName, $LastName, $Timezone, $countryCode, $Phone, $Email, $Gender, $Languages, $PreferredContactMethod);
+       $stmt->bind_param("ssssss",$FirstName, $LastName, $Timezone, $Email, $Gender, $Languages);
        $stmt->execute();
 
               $stmt->close();
@@ -327,14 +326,7 @@ session_start();
      <input type="email" class="form-control"
     name = "Email" value = "<?php echo $_POST['Email'];?>" readonly>
     <br>
-    <input type="text" class="form-control"
-    name = "countryCode" value = "<?php echo $_POST['countryCode'];?>" readonly>
-    <br>
-      <input type="text" class="form-control"
-    name = "Phone" value = "<?php echo $_POST['Phone'];?>" readonly>
-    <br>
- <input type="text" class="form-control"
-    name = "PreferredContactMethod'" value = "<?php echo $_POST['PreferredContactMethod'];?>" readonly>
+ 
 <div style="text-align:center">
     <h2>Available Volunteers:</h2>
     </div>
