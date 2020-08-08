@@ -280,6 +280,18 @@ body {
        margin-top: 17%;
       }
       }
+   body {
+  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+  background-image: linear-gradient(to top, #e2d1f1 0%, #9dcceb 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  font-family: "Vibur", cursive;
+  /*   the main font */
+  font-family: "Abel", sans-serif;
+  opacity: 0.95;
+  /* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+}
 
 
 </style>
