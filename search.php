@@ -1063,7 +1063,7 @@ grid-template-rows: 1fr;
         text-align: center;
         background-color:white;
         padding-top: 7%;
-         box-shadow: 2px 2px 3px #bc94dc;
+         box-shadow: 2px 2px 3px #ab7bd3;
           border: solid #bc94dc;
           border-width: 0.05rem;
           border-radius: 5px;
@@ -1453,7 +1453,7 @@ body {
               
               body {
   background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
-  background-image: linear-gradient(to top, #d2bde4 0%, #a325dd 100%);
+  background-image: linear-gradient(to top, #e2d1f1 0%, #9dcceb 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
 
@@ -1464,6 +1464,14 @@ body {
   /* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
 }
 
+
+.margin{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-template-rows: 1rem;
+  margin-left: 45rem;
+  margin-right: 45rem;
+}
 
                   </style>
 
@@ -1602,7 +1610,7 @@ $n=sizeof($emptyarray);
                      placeholder="Email"
                       />
                     </div>
-<div class="grid" style="text-align: center;">
+<div class="margin" style="text-align: center;">
 <div>
       <td>English</td>
       <th><input class="lang" type="radio" name="Languages" value="E"></th>
@@ -1621,6 +1629,8 @@ $n=sizeof($emptyarray);
 
 </div>
 
+
+<br>
 
     <input id="showHiddenBlock"type="button" class="optionalbtn" value="OPTIONAL">
     <div id="initiallyHiddenBlock" >
