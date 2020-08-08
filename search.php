@@ -652,6 +652,19 @@ margin: 0;
     }  
 } 
 
+        	  .grid{
+	display: grid;
+	padding: 2rem;
+grid-template-columns: 1fr 1fr  1fr 1fr;
+grid-template-rows: 1fr;
+}
+
+      }
+
+.lang{
+
+    color: black;
+}
           </style>
 
 
@@ -1567,8 +1580,17 @@ $n=sizeof($emptyarray);
                       <input
                         required
                         type="text"
-                        name="name"
-                       placeholder="Name"
+                        name="FirstName"
+                       placeholder="First Name"
+                      />
+                    </div>
+   <div class="form-group">
+
+                      <input
+                        required
+                        type="text"
+                        name="LastName"
+                       placeholder="Last Name"
                       />
                     </div>
                     <div class="form-group" class="headervolunteer">
@@ -1576,10 +1598,28 @@ $n=sizeof($emptyarray);
                       <input
                         required
                         type="email"
-                        name="email"
+                        name="Email"
                      placeholder="Email"
                       />
                     </div>
+<div class="grid" style="text-align: center;">
+<div>
+      <td>English</td>
+      <th><input class="lang" type="radio" name="Languages" value="E"></th>
+</div>
+<div>
+      <td>Hindi</td>
+      <th><input class="lang" type="radio" name="Languages" value="H"></th>
+
+</div><div>	      <td>Mandarin</td>
+      <th><input class="lang" type="radio" name="Languages" value="M"></th>
+</div>
+<div style="text-align: center;">
+      <td>Spanish</td>
+      <th><input class="lang" type="radio" name="Languages" value="S"></th>
+ </div>
+
+</div>
 
 
     <input id="showHiddenBlock"type="button" class="optionalbtn" value="OPTIONAL">
@@ -1808,7 +1848,7 @@ $n=sizeof($emptyarray);
   </select><div class="optiontitle">
                 <input
                   type="tel"
-                  name="phonenumber"
+                  name="Phone"
               class="border"
                   placeholder="Phone Number"
 
@@ -1924,7 +1964,7 @@ $n=sizeof($emptyarray);
 
                 Gender:
 
-                <select name="gender" class="selectwidth"  type="text">
+                <select name="Gender" class="selectwidth"  type="text">
                   <option value="RNS">Rather not say</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
