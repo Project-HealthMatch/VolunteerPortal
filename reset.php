@@ -297,8 +297,8 @@ padding-right:27% ;
 
             <input id="Email" name="email" type="text" placeholder="Email" />
             <input id="Password" name="password" type="password" placeholder="Enter Old Password" />
-            <input id="newf" name="new" type="newf" placeholder="Enter New Password" />
-            <input id=conf name="conf" type="conf" placeholder="Confirm New Password" />
+            <input id="newf" name="new" type="password" placeholder="Enter New Password" />
+            <input id=conf name="conf" type="password" placeholder="Confirm New Password" />
 
 
 <br>
