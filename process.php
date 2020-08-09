@@ -14,9 +14,9 @@ $optional = filter_input(INPUT_POST, 'optional');
 $opt = filter_input(INPUT_POST, 'opt');
 if (!empty($date) || !empty($timezoneid) || !empty($slot) || empty($FirstName) || !empty($Email)|| !empty($Languages)){
 
-$host = "localhost";
-$dbusername = "root";
-$dbpassword = "root";
+$host = "healthmatch-server.mysql.database.azure.com";
+$dbusername = "HEALTHMATCH@healthmatch-server";
+$dbpassword = "Hackathon2020";
 $dbname = "volunteerweb";
 // Create connection
 $conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
@@ -28,7 +28,7 @@ else{
 $sql = "INSERT INTO uservolunteer (date, timezoneid, slot, FirstName, LastName, Email,Languages, countryCode,Phone, age,Gender,optional, opt )
 values ('$date','$timezoneid','$slot','$FirstName','$LastName','$Email','$Languages' ,'$countryCode', '$Phone', '$age', '$Gender', '$optional', '$opt')";
 if ($conn->query($sql)){
-header("Location: payment.html");
+header("Location: thankyou.html");
 }
 else{
 echo "Error: ". $sql ."
