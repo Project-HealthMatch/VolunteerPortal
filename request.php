@@ -5,7 +5,7 @@ if($_SESSION["user"]==true){
 
 }
 else{
-    header("Location: index.php");
+    header("Location: index.html");
 }
 ?>
 
@@ -195,8 +195,8 @@ body {
 </div>
        <div class="col-sm-4 mb-5">
 <?php
-$conn = mysqli_connect("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020", "appointment");
-  $sql = "SELECT * FROM `volunteerweb`";
+$conn = mysqli_connect("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020", "volunteerweb");
+  $sql = "SELECT * FROM `uservolunteer`";
 $result = $conn->query($sql);
 
 
@@ -209,7 +209,7 @@ $result = $conn->query($sql);
   echo '<div class ="card-body">';
   echo '<h5 class= "cardtitle"> DATE: '.$row['date'];
   echo '</h5>';
-  echo '<h5 class = "cardtitle"> TIMEZONE:' .$row['Timezone'];
+  echo '<h5 class = "cardtitle"> TIMEZONE:' .$row['timezoneid'];
   echo '</h5>';
   echo '<h5 class = "cardtitle">SLOT :' .$row['slot'];
   echo '</h5>';
@@ -261,6 +261,9 @@ if(isset($_REQUEST['view']))
         <label for = "slot"> SLOT </label>
         <input type="text" class="form-control" id="slot"
         name = "slot" value = "<?php if (isset($row['slot'])) echo $row['slot'];?>"readonly>
+	   <label for = "optional"> USER'S NOTE </label>
+        <input type="text" class="form-control" id="optional"
+        name = "optional" value = "<?php if (isset($row['optional'])) echo $row['optional'];?>"readonly>
         <label for = "date"> USER'S EMAIL </label>
         <input type="email" class="form-control" id="email"
         name = "email" value = "<?php if (isset($row['email'])) echo $row['email'];?>" readonly>
