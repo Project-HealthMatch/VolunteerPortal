@@ -394,7 +394,7 @@ if(mysqli_query($conn, $sql)){
 
                                echo'  <label> VOLUNTEER EMAIL </label>';
                                echo'  <input type="email" class="form-control" id="email"
-                                 name = "Volunteeremail"  value = "<?php  echo $_SESSION["user"];?>" readonly>';
+                                 name = "Volunteeremail"  value = " $_SESSION["user"];" readonly>';
 
 
 
