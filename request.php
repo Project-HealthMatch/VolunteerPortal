@@ -266,7 +266,7 @@ if(isset($_REQUEST['view']))
         name = "optional" value = "<?php if (isset($row['optional'])) echo $row['optional'];?>"readonly>
         <label for = "date"> USER'S EMAIL </label>
         <input type="email" class="form-control" id="email"
-        name = "email" value = "<?php if (isset($row['email'])) echo $row['email'];?>" readonly>
+        name = "email" value = "<?php if (isset($row['email'])) echo $row['Email'];?>" readonly>
         <label for = "email"> VOLUNTEER'S EMAIL </label>
         <input type="email"  class="form-control" name="docemail" value = "<?php  echo $_SESSION["user"];?>"  readonly>
 
