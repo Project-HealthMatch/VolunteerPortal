@@ -379,12 +379,12 @@ if(mysqli_query($conn, $sql)){
 
                              echo'  <label for = "email"> USER EMAIL </label>';
                              echo'  <input type="email" class="form-control" id="email"
-                               name = "email" value = '.$_POST['email'];' readonly>';
+                               name = "email" value = '.$_POST['Email'];' readonly>';
 
 
                                echo'  <label> VOLUNTEER EMAIL </label>';
                                echo'  <input type="email" class="form-control" id="email"
-                                 name = "docemail" value = '.$_POST['docemail'];' readonly>';
+                                 name = "docemail" value = '.$_POST['Volunteeremail'];' readonly>';
 
 
 
