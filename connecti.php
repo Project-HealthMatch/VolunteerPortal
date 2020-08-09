@@ -355,7 +355,7 @@ $m=str_replace($slots,'',$emptyarray);
 
 $b=implode(",",$m);
 
-$sql = "UPDATE slotbooking SET slot='$b' WHERE email= '$email' AND date ='$date'";
+$sql = "UPDATE slotbooking SET slots='$b' WHERE email= '$email' AND date ='$date'";
 if(mysqli_query($conn, $sql)){
     
 } else {
