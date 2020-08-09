@@ -462,4 +462,3 @@ if(mysqli_query($conn, $sql)){
       
 </html>
 
- $link = mysqli_connect("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020", "volunteerweb");
