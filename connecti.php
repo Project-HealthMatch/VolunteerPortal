@@ -349,7 +349,7 @@ session_start();
 $n = sizeof($emptyarray);
 for($i=0;$i<$n;$i++)
 { if ($emptyarray[$i] == $slots){
-$m=str_replace($slots,''$emptyarray);
+$m=str_replace($slots,'',$emptyarray);
 
 }}
 
