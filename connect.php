@@ -17,10 +17,10 @@ session_start();
      else
 
      {
-       $stmt = $conn->prepare("insert into slot(date, timeZoneId, slots, email)
+       $stmt = $conn->prepare("insert into slotbooking(date, timeZoneId, slots, email)
        values(?, ?, ?, ?, ?)");
 
-      $b=implode(",",$slot);
+      $b=implode(",",$slots);
       $w=implode(",",$Languages);
        $stmt->bind_param("ssss",$date,$timeZoneId, $b,  $email);
        $stmt->execute();
