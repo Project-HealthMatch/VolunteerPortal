@@ -261,7 +261,7 @@ if(isset($_REQUEST['view']))
         <label for = "slot"> SLOT </label>
         <input type="text" class="form-control" id="slot"
         name = "slot" value = "<?php if (isset($row['slot'])) echo $row['slot'];?>"readonly>
-	    <label for = "date"> First Name</label>
+	    <label for = "date"> FIRST NAME</label>
         <input type="email" class="form-control" id="email"
         name = "Email" value = "<?php if (isset($row['FirstName'])) echo $row['FirstName'];?>" readonly>
 	   <label for = "optional"> USER'S NOTE </label>
