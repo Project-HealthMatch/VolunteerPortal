@@ -271,7 +271,7 @@ if(isset($_REQUEST['view']))
         <label for = "date"> USER'S EMAIL </label>
         <input type="email" class="form-control" id="email"
         name = "Email" value = "<?php if (isset($row['Email'])) echo $row['Email'];?>" readonly>
-        <label for = "email"> VOLUNTEER'S EMAIL </label>
+        <label for = "Volunteeremail"> VOLUNTEER'S EMAIL </label>
         <input type="email"  class="form-control" name="Volunteeremail" value = "<?php  echo $_SESSION["user"];?>"  readonly>
 
 
