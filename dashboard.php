@@ -587,23 +587,6 @@ i{
 
   </div>
 </div>
-<div>
-  <div class="languagegrid" style="text-align: center;">
-  <div>
-        <td>English</td>
-        <th><input type="checkbox" name="Languages[]" value="E"></th>
-  </div>
-  <div>
-        <td>Hindi</td>
-        <th><input type="checkbox" name="Languages[]" value="H"></th>
-
-  </div><div>	      <td>Mandarin</td>
-        <th><input type="checkbox" name="Languages[]" value="M"></th>
-  </div>
-  <div style="text-align: center;">
-        <td>Spanish</td>
-        <th><input type="checkbox" name="Languages[]" value="S"></th>
-   </div>
 
   </div>
 
