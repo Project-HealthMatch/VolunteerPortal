@@ -294,16 +294,16 @@ body {
 <?php
 
 session_start();
-
+    $id = $_POST['id'];
+           
      $date = $_POST['date'];
 
      $slot = $_POST['slot'];
 
-     $id = $_POST['id'];
-
-     $Email = $_POST['Email'];
+    $Email = $_POST['Email'];
 
      $Volunteeremail = $_POST['Volunteeremail'];
+           
      $emptyarray = array();
      $n=0;
      $i=0;
@@ -321,10 +321,10 @@ session_start();
      else
 
      {
-       $stmt = $conn->prepare("insert into volunteerappointment(date, slot, id, email,Volunteeremail )
+       $stmt = $conn->prepare("insert into volunteerappointment(id, date, slot,  Email,Volunteeremail )
        values(?, ?, ? ,?, ?)");
       //$b=implode(",",$slot);
-       $stmt->bind_param("sssss",$date,$slot,$id,$email, $Volunteeremail);
+       $stmt->bind_param("sssss",$id,$date,$slot,$Email, $Volunteeremail);
        $stmt->execute();
        if($stmt == TRUE){
        $sql = "SELECT * FROM uservolunteer WHERE  id = {$_REQUEST['id']}";
@@ -332,7 +332,7 @@ session_start();
        $row = $result->fetch_assoc();}
        $sql = "DELETE  FROM uservolunteer WHERE id = {$_REQUEST['id']}";
        if($conn->query($sql) == TRUE){
-      $sql=(" SELECT * FROM slotbooking WHERE date='$date' AND Email = '$Email' ");
+      $sql=(" SELECT * FROM slotbooking WHERE date='$date' AND email = '$email' ");
       if($result = mysqli_query($conn, $sql)){
       if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_array($result)){
@@ -355,7 +355,7 @@ $m=str_replace($slots,'',$emptyarray);
 
 $b=implode(",",$m);
 
-$sql = "UPDATE slotbooking SET slot='$b' WHERE email= '$Volunteeremail' AND date ='$date'";
+$sql = "UPDATE slotbooking SET slot='$b' WHERE email= '$email' AND date ='$date'";
 if(mysqli_query($conn, $sql)){
     
 } else {
