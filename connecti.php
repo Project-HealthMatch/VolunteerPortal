@@ -303,7 +303,7 @@ session_start();
 
      $email = $_POST['email'];
 
-     $docemail = $_POST['docemail'];
+     $Volunteeremail = $_POST['Volunteeremail'];
      $emptyarray = array();
      $n=0;
      $i=0;
@@ -312,7 +312,7 @@ session_start();
 
 
 
-     $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","appointment");
+     $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
    if($conn->connect_error)
      {
        die('connection failed :' .$conn->connect_error);
@@ -321,23 +321,23 @@ session_start();
      else
 
      {
-       $stmt = $conn->prepare("insert into acceptappoiintment(date, slot, id, email,docemail )
+       $stmt = $conn->prepare("insert into volunteerappointment(date, slot, id, email,Volunteeremail )
        values(?, ?, ? ,?, ?)");
       //$b=implode(",",$slot);
-       $stmt->bind_param("sssss",$date,$slot,$id,$email, $docemail);
+       $stmt->bind_param("sssss",$date,$slot,$id,$email, $Volunteeremail);
        $stmt->execute();
        if($stmt == TRUE){
-       $sql = "SELECT * FROM booking WHERE  id = {$_REQUEST['id']}";
+       $sql = "SELECT * FROM uservolunteer WHERE  id = {$_REQUEST['id']}";
        $result = $conn->query($sql);
        $row = $result->fetch_assoc();}
-       $sql = "DELETE  FROM booking WHERE id = {$_REQUEST['id']}";
+       $sql = "DELETE  FROM uservolunteer WHERE id = {$_REQUEST['id']}";
        if($conn->query($sql) == TRUE){
-      $sql=(" SELECT * FROM bookings WHERE date='$date' AND email = '$docemail' ");
+      $sql=(" SELECT * FROM slotbooking WHERE date='$date' AND Email = '$Email' ");
       if($result = mysqli_query($conn, $sql)){
       if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_array($result)){
             echo "<tr>";
-            $str =(explode(",",$row['slot']));
+            $str =(explode(",",$row['slots']));
 
         $emptyarray=array_merge($emptyarray,$str);
 
@@ -348,14 +348,14 @@ session_start();
 
 $n = sizeof($emptyarray);
 for($i=0;$i<$n;$i++)
-{ if ($emptyarray[$i] == $slot){
-$m=str_replace($slot,'',$emptyarray);
+{ if ($emptyarray[$i] == $slots){
+$m=str_replace($slots,''$emptyarray);
 
 }}
 
 $b=implode(",",$m);
 
-$sql = "UPDATE bookings SET slot='$b' WHERE email= '$docemail' AND date ='$date'";
+$sql = "UPDATE slotbooking SET slot='$b' WHERE email= '$Volunteeremail' AND date ='$date'";
 if(mysqli_query($conn, $sql)){
     
 } else {
@@ -394,7 +394,7 @@ if(mysqli_query($conn, $sql)){
 
                                echo'  <label> VOLUNTEER EMAIL </label>';
                                echo'  <input type="email" class="form-control" id="email"
-                                 name = "Volunteeremail"  value = " .$_SESSION["user"];" readonly>';
+                                 name = "Volunteeremail"  value = '.$_POST['Volunteeremail'];' readonly>';
 
 
 
