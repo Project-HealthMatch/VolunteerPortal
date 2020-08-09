@@ -8,7 +8,7 @@ session_start();
      $email = $_POST['email'];
 
 
-     $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","slotbooking");
+     $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
      if($conn->connect_error)
      {
        die('connection failed :' .$conn->connect_error);
@@ -17,7 +17,7 @@ session_start();
      else
 
      {
-       $stmt = $conn->prepare("insert into volunteerweb(date, timeZoneId, slot, email)
+       $stmt = $conn->prepare("insert into slot(date, timeZoneId, slots, email)
        values(?, ?, ?, ?, ?)");
 
       $b=implode(",",$slot);
