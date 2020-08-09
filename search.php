@@ -1494,8 +1494,7 @@ body {
               Please select your preferred timeslot:
             </h3>
             <?php
-
-  $link = mysqli_connect("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020", "volunteerweb");
+ $link = mysqli_connect("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020", "volunteerweb");
 
   // Check connection
   if($link === false){
@@ -1505,7 +1504,7 @@ body {
   $timeZoneId = $_POST['timeZoneId'];
   $emptyarray = array();
   // Attempt select query execution
-  $sql = "SELECT * FROM volunteerweb WHERE date='$date' AND timeZoneId = '$timeZoneId'";
+  $sql = "SELECT * FROM slotbooking WHERE date='$date' AND timeZoneId = '$timeZoneId'";
 
   if($result = mysqli_query($link, $sql)){
       if(mysqli_num_rows($result) > 0){
@@ -1514,7 +1513,7 @@ body {
 
           while($row = mysqli_fetch_array($result)){
               echo "<tr>";
-              $str =(explode(",",$row['slot']));
+              $str =(explode(",",$row['slots']));
 
           $emptyarray=array_merge($emptyarray,$str);
 
