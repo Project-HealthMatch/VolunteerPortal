@@ -213,12 +213,12 @@ body {
      }
 
       }
-   
+
     #initiallyHiddenBlock {
           display: none;
       }
 
-   
+
     .homebtn {
         border: 1px solid white;
         background-color: rgb(105, 223, 197);
@@ -261,7 +261,7 @@ body {
         background: #51a09b;
       }
 
-     
+
 
       @media(min-width:900px)
      {
@@ -276,7 +276,7 @@ body {
 
       }
       }
-   
+
     @media(max-width:900px)
      {
 
@@ -291,19 +291,18 @@ body {
       }
       }
 </style>
+
 <?php
 
-session_start();
-    $id = $_POST['id'];
-           
      $date = $_POST['date'];
 
      $slot = $_POST['slot'];
 
-    $Email = $_POST['Email'];
+     $id = $_POST['id'];
+
+     $Email = $_POST['Email'];
 
      $Volunteeremail = $_POST['Volunteeremail'];
-           
      $emptyarray = array();
      $n=0;
      $i=0;
@@ -311,8 +310,7 @@ session_start();
      $b;
 
 
-
-     $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
+  $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
    if($conn->connect_error)
      {
        die('connection failed :' .$conn->connect_error);
@@ -321,56 +319,57 @@ session_start();
      else
 
      {
-       $stmt = $conn->prepare("insert into volunteerappointment(id, date, slot,  Email,Volunteeremail )
+       $stmt = $conn->prepare("insert into volunteerappointment(date, slot, id, Email,Volunteeremail )
        values(?, ?, ? ,?, ?)");
       //$b=implode(",",$slot);
-       $stmt->bind_param("sssss",$id,$date,$slot,$Email, $Volunteeremail);
+       $stmt->bind_param("sssss",$date,$slot,$id,$Email, $Volunteeremail);
        $stmt->execute();
        if($stmt == TRUE){
-       $sql = "SELECT * FROM uservolunteer WHERE  id = {$_REQUEST['id']}";
-       $result = $conn->query($sql);
-       $row = $result->fetch_assoc();}
-       $sql = "DELETE  FROM uservolunteer WHERE id = {$_REQUEST['id']}";
-       if($conn->query($sql) == TRUE){
-      $sql=(" SELECT * FROM slotbooking WHERE date='$date' AND email = '$email' ");
-      if($result = mysqli_query($conn, $sql)){
-      if(mysqli_num_rows($result) > 0){
-        while($row = mysqli_fetch_array($result)){
-            echo "<tr>";
-            $str =(explode(",",$row['slots']));
+      $sql = "SELECT * FROM uservolunteer WHERE  id = {$_REQUEST['id']}";
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();}
+      $sql = "DELETE  FROM uservolunteer WHERE id = {$_REQUEST['id']}";
+      if($conn->query($sql) == TRUE){
 
-        $emptyarray=array_merge($emptyarray,$str);
+         $sql=(" SELECT * FROM slotbooking WHERE date='$date' AND email = '$Volunteeremail' ");
+         if($result = mysqli_query($conn, $sql)){
+         if(mysqli_num_rows($result) > 0){
+           while($row = mysqli_fetch_array($result)){
+               echo "<tr>";
+               $str =(explode(",",$row['slots']));
 
-
-
-            echo "</tr>";
-        }
-
-$n = sizeof($emptyarray);
-for($i=0;$i<$n;$i++)
-{ if ($emptyarray[$i] == $slots){
-$m=str_replace($slots,'',$emptyarray);
-
-}}
-
-$b=implode(",",$m);
-
-$sql = "UPDATE slotbooking SET slots='$b' WHERE email= '$email' AND date ='$date'";
-if(mysqli_query($conn, $sql)){
-    
-} else {
-    echo "ERROR: Could not able to execute $sql. "
-                            . mysqli_error($conn);
-}
+           $emptyarray=array_merge($emptyarray,$str);
 
 
 
+               echo "</tr>";
+           }
+           $n = sizeof($emptyarray);
+           for($i=0;$i<$n;$i++)
+           { if ($emptyarray[$i] == $slot){
+           $m=str_replace($slot,'',$emptyarray);
 
-}}
-    else {
-      echo "accepting booking ";
-    }
-  }else { echo "false";}
+           }}
+
+           $b=implode(",",$m);
+
+           $sql = "UPDATE slotbooking SET slots='$b' WHERE email= '$Volunteeremail' AND date ='$date'";
+           if(mysqli_query($conn, $sql)){
+
+           } else {
+               echo "ERROR: Could not able to execute $sql. "
+                                       . mysqli_error($conn);
+           }
+
+
+
+
+           }}
+               else {
+                 echo "accepting booking ";
+               }
+             }
+             else { echo "false";}
 
 
               echo '<div style="text-align: center;">';
@@ -389,7 +388,7 @@ if(mysqli_query($conn, $sql)){
 
                              echo'  <label for = "email"> USER EMAIL </label>';
                              echo'  <input type="email" class="form-control" id="email"
-                               name = "email" value = '.$_POST['Email'];' readonly>';
+                               name = "Email" value = '.$_POST['Email'];' readonly>';
 
 
                                echo'  <label> VOLUNTEER EMAIL </label>';
@@ -412,7 +411,7 @@ if(mysqli_query($conn, $sql)){
 
        $conn->close();}
        ?>
-          
+
            <div id="initiallyHiddenBlock">
 
         <div class="buttongrid">
@@ -431,7 +430,7 @@ if(mysqli_query($conn, $sql)){
         </button>
       </a>
 
-     
+
     <a href="<?php echo "logout.php"; ?>">
         <button class="homebtn" :hover>
          <i class="fa fa-power-off"></i> Logout
@@ -458,7 +457,7 @@ if(mysqli_query($conn, $sql)){
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-      
+
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  <script>
@@ -469,6 +468,5 @@ if(mysqli_query($conn, $sql)){
       });
   });
   </script>
-      
-</html>
 
+</html>
