@@ -298,6 +298,8 @@ body {
 
      $slot = $_POST['slot'];
 
+     $FirstName = $_POST['FirstName'];
+
      $id = $_POST['id'];
 
      $Email = $_POST['Email'];
@@ -308,6 +310,7 @@ body {
      $i=0;
      $m= array();
      $b;
+
 
 
 
@@ -387,6 +390,9 @@ body {
                              name = "slot" value = '. $_POST['slot'];' readonly>';
 
 
+                             echo'  <label for = "FirstName"> NAME </label>';
+                             echo'  <input type="text" class="form-control" id="email"
+                               name = "FirstName" value = '.$_POST['FirstName'];' readonly>';
 
                              echo'  <label for = "email"> USER EMAIL </label>';
                              echo'  <input type="email" class="form-control" id="email"
