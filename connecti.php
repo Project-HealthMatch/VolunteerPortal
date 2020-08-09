@@ -1,3 +1,13 @@
+<?
+session_start();
+
+if($_SESSION["user"]==true){
+
+}
+else{
+    header("Location: index.html");
+}
+?>
 <!DOCTYPE html>
 
    <html>
@@ -384,7 +394,7 @@ if(mysqli_query($conn, $sql)){
 
                                echo'  <label> VOLUNTEER EMAIL </label>';
                                echo'  <input type="email" class="form-control" id="email"
-                                 name = "docemail" value = '.$_POST['Volunteeremail'];' readonly>';
+                                 name = "Volunteeremail"  value = "<?php  echo $_SESSION["user"];?>" readonly>';
 
 
 
