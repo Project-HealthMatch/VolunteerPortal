@@ -3,7 +3,7 @@
 session_start();
      $date= $_POST['date'];
      $timeZoneId = $_POST['timeZoneId'];
-     $slot = $_POST['slot'];
+     $slots = $_POST['slot'];
     
      $email = $_POST['email'];
 
