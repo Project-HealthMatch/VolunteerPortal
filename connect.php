@@ -18,7 +18,7 @@ session_start();
 
      {
        $stmt = $conn->prepare("insert into slotbooking(date, timeZoneId, slots, email)
-       values(?, ?, ?, ?, ?)");
+       values(?, ?, ?, ?)");
 
       $b=implode(",",$slots);
       $w=implode(",",$Languages);
