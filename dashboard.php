@@ -435,6 +435,7 @@ i{
 	<option  gmtAdjustment="GMT+12:00" useDaylightTime="1" value="Auckland, Wellington(GMT+12:00)"> Auckland, Wellington(GMT+12:00)</option>
 	<option  gmtAdjustment="GMT+12:00" useDaylightTime="0" value="Fiji, Kamchatka, Marshall Is.(GMT+12:00)">Fiji, Kamchatka, Marshall Is.(GMT+12:00) </option>
 
+
 </select>
 </div>
 
