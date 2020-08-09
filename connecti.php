@@ -311,6 +311,7 @@ body {
 
 
 
+
      $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
    if($conn->connect_error)
      {
@@ -348,7 +349,7 @@ body {
            $n = sizeof($emptyarray);
            for($i=0;$i<$n;$i++)
            { if ($emptyarray[$i] == $slot){
-           $m=str_replace($slots,'',$emptyarray);
+           $m=str_replace($slot,'',$emptyarray);
 
            }}
 
