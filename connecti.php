@@ -310,7 +310,8 @@ body {
      $b;
 
 
-  $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
+
+     $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
    if($conn->connect_error)
      {
        die('connection failed :' .$conn->connect_error);
