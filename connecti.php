@@ -301,7 +301,7 @@ session_start();
 
      $id = $_POST['id'];
 
-     $email = $_POST['email'];
+     $Email = $_POST['Email'];
 
      $Volunteeremail = $_POST['Volunteeremail'];
      $emptyarray = array();
