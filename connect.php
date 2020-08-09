@@ -21,7 +21,7 @@ session_start();
        values(?, ?, ?, ?)");
 
       $b=implode(",",$slots);
-      $w=implode(",",$Languages);
+   
        $stmt->bind_param("ssss",$date,$timeZoneId, $b,  $email);
        $stmt->execute();
        echo "slot booked";
