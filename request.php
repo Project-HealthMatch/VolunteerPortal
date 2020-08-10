@@ -209,7 +209,7 @@ $result = $conn->query($sql);
   echo '<h5 class= "cardtitle"> DATE: '.$row['date'];
   echo '</h5>';
 	  echo '</h5>';
-  echo '<h5 class = "cardtitle">Language:' .$row['Languages'];
+  echo '<h5 class = "cardtitle">LANGUAGE:' .$row['Languages'];
   echo '</h5>';
   echo '<h5 class = "cardtitle"> TIMEZONE:' .$row['timezoneid'];
   echo '</h5>';
