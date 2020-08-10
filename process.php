@@ -315,36 +315,7 @@ $sql = "INSERT INTO uservolunteer (date, timezoneid, slot, FirstName, LastName, 
 values ('$date','$timezoneid','$slot','$FirstName','$LastName','$Email','$Languages' ,'$countryCode', '$Phone', '$age', '$Gender', '$optional', '$opt')";
    
    
-    echo '<div style="text-align: center;">';
-                       echo '<form method="POST" name="google-sheet" id="HideBlock">';
-
-
-
-                            echo ' <label for = "date">DATE </label>';
-                             echo '<input type="text" class="form-control" id="date"
-                             name = "date" value = '.$date;' readonly>';
-                            echo ' <label for = "slot"> SLOT </label>';
-                             echo '<input type="text" class="form-control" id="slot"
-                             name = "slot" value = '.$slot;' readonly>';
-
-           echo'  <label for = "timezoneid"> TIMEZONE </label>';
-                             echo'  <input type="text" class="form-control" 
-                               name = "timezoneid" value = '.$timezoneid;' readonly>';
-         
-                           
-
-                             echo'  <label for = "Email"> USER EMAIL </label>';
-                             echo'  <input type="email" class="form-control" id="Email"
-                               name = "Email" value = '.$Email;' readonly>';
-
-
-                              
-
-                     echo'    <div>';
-                      echo '<input type = "submit" class ="acceptbtn" value = "Confirm" name ="submit" id="showHiddenBlock">';
-                   echo'    </div>';
-
-                   echo'  </form>';
+  
 
 
 
@@ -367,67 +338,6 @@ else{
 echo "please enter your name , email, date and timeslot with timezone";
 die();
 }
-
-       ?>
-
-           <div id="initiallyHiddenBlock">
-
-        <div class="buttongrid">
- <a href="<?php echo "request.php"; ?>">
-        <button class="homebtn" :hover>
-         <i class="fa fa-people"></i> Accept Appointment
-        </button>
-      </a>
-
-
-
-
-     <a href="<?php echo "dashboard.php"; ?>">
-        <button class="homebtn" :hover>
-         <i class="fa fa-people"></i> Pick Slots
-        </button>
-      </a>
-
-
-    <a href="<?php echo "logout.php"; ?>">
-        <button class="homebtn" :hover>
-         <i class="fa fa-power-off"></i> Logout
-        </button>
-      </a>
-       </div>
-</div>
-          </body>
-
-     <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbzVH7f2tOcx36w_WslIETUwS2ebCs5Y3MSNk8qfy4YXCD_bbuoi/exec";
-      const form = document.forms["google-sheet"];
-
-     form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Thank you for choosing HealthMatch.We will allot you a User soon!"))
-                .catch(error => console.error('Error!', error.message))
-            })
-
-    </script>
-
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <script>
-     $(document).ready(function() {
-      $('#showHiddenBlock').click(function() {
- $('#initiallyHiddenBlock').show();
-  $('#HideBlock').hide();
-      });
-  });
-  </script>
-
-</html>
 
 
 
