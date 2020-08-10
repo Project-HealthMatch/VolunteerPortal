@@ -269,7 +269,8 @@ if(isset($_REQUEST['view']))
 	    <label for = "FirstName">NAME</label>
         <input type="text" class="form-control" 
         name = "FirstName" value = "<?php if (isset($row['FirstName'])) echo $row['FirstName'];?>" readonly>
-	   <input type="text" class="form-control"
+	  <br>
+	  <input type="text" class="form-control"
         name = "LastName" value = "<?php if (isset($row['LastName'])) echo $row['LastName'];?>" readonly>
 	   <label for = "optional"> USER'S NOTE </label>
         <input type="text" class="form-control" id="optional"
