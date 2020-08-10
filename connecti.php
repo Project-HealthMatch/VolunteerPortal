@@ -105,6 +105,8 @@ input{
 }
 
 body {
+  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+  
 background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
       background-attachment: fixed;
       background-repeat: no-repeat;
@@ -312,6 +314,7 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
 
 
 
+    
 
 
      $conn = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","volunteerweb");
@@ -384,14 +387,13 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
                             echo ' <label for = "date"> APPOINTMENT DATE </label>';
                              echo '<input type="text" class="form-control" id="date"
                              name = "date" value = '.$_POST['date'];' readonly>';
-         
                             echo ' <label for = "slot"> SLOT </label>';
                              echo '<input type="text" class="form-control" id="slot"
                              name = "slot" value = '. $_POST['slot'];' readonly>';
 
 
-                             echo'  <label for = "FirstName"> NAME </label>';
-                             echo'  <input type="text" class="form-control" id="FirstName"
+                             echo'  <label for = "FirstName"> Name </label>';
+                             echo'  <input type="text" class="form-control" id="email"
                                name = "FirstName" value = '.$_POST['FirstName'];' readonly>';
 
                              echo'  <label for = "email"> USER EMAIL </label>';
@@ -399,7 +401,7 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
                                name = "Email" value = '.$_POST['Email'];' readonly>';
 
 
-                               echo'  <label for ="Volunteeremail"> VOLUNTEER EMAIL </label>';
+                               echo'  <label> VOLUNTEER EMAIL </label>';
                                echo'  <input type="email" class="form-control" id="email"
                                  name = "Volunteeremail"  value = '.$_POST['Volunteeremail'];' readonly>';
 
