@@ -263,6 +263,9 @@ if(isset($_REQUEST['view']))
         <label for = "slot"> SLOT </label>
         <input type="text" class="form-control" id="slot"
         name = "slot" value = "<?php if (isset($row['slot'])) echo $row['slot'];?>"readonly>
+	   <label for = "slot"> TIMEZONE </label>
+        <input type="text" class="form-control" 
+        name = "timezoneid" value = "<?php if (isset($row['timezoneid'])) echo $row['timezoneid'];?>"readonly>
 	    <label for = "FirstName">NAME</label>
         <input type="text" class="form-control" 
         name = "FirstName" value = "<?php if (isset($row['FirstName'])) echo $row['FirstName'];?>" readonly>
