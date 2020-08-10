@@ -282,36 +282,63 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
 
       }
       }
-      h1{ 
-          margin-top:15%;
-             font-family: "Vibur", cursive;
-             }
 </style>
+<body>
 
 <?php
 
- 
-         
+$date = filter_input(INPUT_POST, 'date');
+$timezoneid = filter_input(INPUT_POST, 'timezoneid');
+$slot = filter_input(INPUT_POST, 'slot');
+$FirstName = filter_input(INPUT_POST, 'FirstName');
+$LastName = filter_input(INPUT_POST, 'LastName');
+$Email = filter_input(INPUT_POST, 'Email');
+$Languages = filter_input(INPUT_POST, 'Languages');
+$countryCode = filter_input(INPUT_POST, 'countryCode');
+$Phone = filter_input(INPUT_POST, 'Phone');
+$age = filter_input(INPUT_POST, 'age');
+$Gender = filter_input(INPUT_POST, 'Gender');
+$optional = filter_input(INPUT_POST, 'optional');
+$opt = filter_input(INPUT_POST, 'opt');
+if (!empty($date) || !empty($timezoneid) || !empty($slot) || empty($FirstName) || !empty($Email)|| !empty($Languages)){
 
-              echo '<div style="text-align: center;">';
+$host = "healthmatch-server.mysql.database.azure.com";
+$dbusername = "HEALTHMATCH@healthmatch-server";
+$dbpassword = "Hackathon2020";
+$dbname = "volunteerweb";
+// Create connection
+$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+if (mysqli_connect_error()){
+die('Connect Error ('. mysqli_connect_errno() .') '
+. mysqli_connect_error());
+}
+else{
+$sql = "INSERT INTO uservolunteer (date, timezoneid, slot, FirstName, LastName, Email,Languages, countryCode,Phone, age,Gender,optional, opt )
+values ('$date','$timezoneid','$slot','$FirstName','$LastName','$Email','$Languages' ,'$countryCode', '$Phone', '$age', '$Gender', '$optional', '$opt')";
+
+echo '<div style="text-align: center;">';
                        echo '<form method="POST" name="google-sheet" id="HideBlock">';
 
 
 
                             echo ' <label for = "date">DATE </label>';
                              echo '<input type="text" class="form-control" id="date"
-                             name = "date" value = '.$_POST['date'];' readonly>';
+                             name = "date" value = '.filter_input(INPUT_POST, 'date');' readonly>';
                             echo ' <label for = "slot"> SLOT </label>';
                              echo '<input type="text" class="form-control" id="slot"
-                             name = "slot" value = '.$_POST['slot'];' readonly>';
+                             name = "slot" value = ' .filter_input(INPUT_POST, 'slot');' readonly>';
 
            echo'  <label for = "timezoneid"> TIMEZONE </label>';
                              echo'  <input type="text" class="form-control" 
-                               name = "timezoneid" value = '.$_POST['timezoneid'];' readonly>';
+                               name = "timezoneid" value = '.filter_input(INPUT_POST, 'timezoneid');' readonly>';
          
                              echo'  <label for = "FirstName">FIRST NAME </label>';
                              echo'  <input type="text" class="form-control" id="FirstName"
-                               name = "FirstName" value = '.$_POST['FirstName'];' readonly>';
+                               name = "FirstName" value = '.filter_input(INPUT_POST, 'FirstName');' readonly>';
+
+                                 echo'  <label for = "Email">EMAIL </label>';
+                             echo'  <input type="text" class="form-control"id="FirstName"
+                               name = "Email" value = '.filter_input(INPUT_POST, 'Email');' readonly>';
        
            
 
@@ -323,21 +350,36 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
                    echo'  </form>';
 
 
-       ?>
 
-           <div id="initiallyHiddenBlock" style="text-align:center;">
+
+if ($conn->query($sql)){
+
+}
+else{
+echo "Error: ". $sql ."
+". $conn->error;
+}
+$conn->close();
+}
+}
+else{
+echo "please enter your name , email, date and timeslot with timezone";
+die();
+}
+?>
+<div id="initiallyHiddenBlock" style="text-align:center;">
 <h1>Thank You for Choosing HealthMatch.We shall connect you with a Volunteer soon!<h1>
        
        
 </div>
+
           </body>
 
      <script>
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbxAzPAN1bbISOYNL4ymTfgLD0Wd51lR567ZEnBOLzy40VcoCSa4/exec";
       const form = document.forms["google-sheet"];
-
-     form.addEventListener('submit', e => {
+       form.addEventListener('submit', e => {
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => alert("Thank you for choosing HealthMatch."))
