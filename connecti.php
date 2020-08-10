@@ -392,12 +392,12 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
                              name = "slot" value = '. $_POST['slot'];' readonly>';
 
 
-                             echo'  <label for = "FirstName"> Name </label>';
-                             echo'  <input type="text" class="form-control" id="email"
+                             echo'  <label for = "FirstName"> NAME </label>';
+                             echo'  <input type="text" class="form-control" id="FirstName"
                                name = "FirstName" value = '.$_POST['FirstName'];' readonly>';
 
-                             echo'  <label for = "email"> USER EMAIL </label>';
-                             echo'  <input type="email" class="form-control" id="email"
+                             echo'  <label for = "Email"> USER EMAIL </label>';
+                             echo'  <input type="email" class="form-control" id="Email"
                                name = "Email" value = '.$_POST['Email'];' readonly>';
 
 
