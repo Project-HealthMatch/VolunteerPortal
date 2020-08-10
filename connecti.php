@@ -395,6 +395,10 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
                              echo'  <label for = "FirstName"> NAME </label>';
                              echo'  <input type="text" class="form-control" id="FirstName"
                                name = "FirstName" value = '.$_POST['FirstName'];' readonly>';
+         
+        
+                             echo'  <input type="text" class="form-control" id="LastName"
+                               name = "LastName" value = '.$_POST['LastName'];' readonly>';
 
                              echo'  <label for = "Email"> USER EMAIL </label>';
                              echo'  <input type="email" class="form-control" id="Email"
