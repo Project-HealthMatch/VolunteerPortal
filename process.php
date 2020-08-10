@@ -282,6 +282,14 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
 
       }
       }
+
+      h1{
+
+          margin-top:15%;
+            font-family: "Vibur", cursive;
+
+
+      }
 </style>
 <body>
 
