@@ -264,8 +264,10 @@ if(isset($_REQUEST['view']))
         <input type="text" class="form-control" id="slot"
         name = "slot" value = "<?php if (isset($row['slot'])) echo $row['slot'];?>"readonly>
 	    <label for = "FirstName">NAME</label>
-        <input type="text" class="form-control" id="email"
-        name = "Email" value = "<?php if (isset($row['FirstName'])) echo $row['FirstName'];?>" readonly>
+        <input type="text" class="form-control" 
+        name = "FirstName" value = "<?php if (isset($row['FirstName'])) echo $row['FirstName'];?>" readonly>
+	   <input type="text" class="form-control"
+        name = "LastName" value = "<?php if (isset($row['LastName'])) echo $row['LastName'];?>" readonly>
 	   <label for = "optional"> USER'S NOTE </label>
         <input type="text" class="form-control" id="optional"
         name = "optional" value = "<?php if (isset($row['optional'])) echo $row['optional'];?>"readonly>
