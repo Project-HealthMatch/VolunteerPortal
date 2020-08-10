@@ -391,7 +391,10 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
                              echo '<input type="text" class="form-control" id="slot"
                              name = "slot" value = '. $_POST['slot'];' readonly>';
 
-
+           echo'  <label for = "Timezone"> Timezone </label>';
+                             echo'  <input type="text" class="form-control" 
+                               name = "Timezone" value = '.$_POST['timezoneid'];' readonly>';
+         
                              echo'  <label for = "FirstName">FIRST NAME </label>';
                              echo'  <input type="text" class="form-control" id="FirstName"
                                name = "FirstName" value = '.$_POST['FirstName'];' readonly>';
