@@ -28,7 +28,7 @@ else{
 $sql = "INSERT INTO uservolunteer (date, timezoneid, slot, FirstName, LastName, Email,Languages, countryCode,Phone, age,Gender,optional, opt )
 values ('$date','$timezoneid','$slot','$FirstName','$LastName','$Email','$Languages' ,'$countryCode', '$Phone', '$age', '$Gender', '$optional', '$opt')";
 if ($conn->query($sql)){
-header("Location: thankyou.html");
+header("Location: confirm.php");
 }
 else{
 echo "Error: ". $sql ."
