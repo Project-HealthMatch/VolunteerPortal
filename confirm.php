@@ -326,7 +326,7 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
        ?>
 
            <div id="initiallyHiddenBlock" style="text-align:center;">
-<h1>Thank You for Choosing HealthMatch!We shall connect you with a Volunteer soon!<h1>
+<h1>Thank You for Choosing HealthMatch.We shall connect you with a Volunteer soon!<h1>
        
        
 </div>
@@ -340,7 +340,7 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
      form.addEventListener('submit', e => {
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Thank you for choosing HealthMatch.We will allot you a User soon!"))
+                .then(response => alert("Thank you for choosing HealthMatch."))
                 .catch(error => console.error('Error!', error.message))
             })
 
