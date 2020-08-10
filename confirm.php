@@ -325,7 +325,7 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
 
        ?>
 
-           <div id="initiallyHiddenBlock">
+           <div id="initiallyHiddenBlock" style="text-align:center;">
 <h1>Thank You for Choosing HealthMatch!We shall connect you with a Volunteer soon!<h1>
        
        
