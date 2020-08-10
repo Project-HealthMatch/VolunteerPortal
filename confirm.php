@@ -300,18 +300,18 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
 
                             echo ' <label for = "date">DATE </label>';
                              echo '<input type="text" class="form-control" id="date"
-                             name = "date" value = '.$date;' readonly>';
+                             name = "date" value = '.$_POST['date'];' readonly>';
                             echo ' <label for = "slot"> SLOT </label>';
                              echo '<input type="text" class="form-control" id="slot"
-                             name = "slot" value = '. $slot;' readonly>';
+                             name = "slot" value = '.$_POST['slot'];' readonly>';
 
            echo'  <label for = "timezoneid"> TIMEZONE </label>';
                              echo'  <input type="text" class="form-control" 
-                               name = "timezoneid" value = '.$timezoneid;' readonly>';
+                               name = "timezoneid" value = '.$_POST['timezoneid'];' readonly>';
          
                              echo'  <label for = "FirstName">FIRST NAME </label>';
                              echo'  <input type="text" class="form-control" id="FirstName"
-                               name = "FirstName" value = '.$FirstName;' readonly>';
+                               name = "FirstName" value = '.$_POST['FirstName'];' readonly>';
        
            
 
