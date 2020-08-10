@@ -298,6 +298,8 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
      $date = $_POST['date'];
 
      $slot = $_POST['slot'];
+           
+           $timezoneid=$_POST['timezoneid'];
 
      $FirstName = $_POST['FirstName'];
 
@@ -326,10 +328,10 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
      else
 
      {
-       $stmt = $conn->prepare("insert into volunteerappointment(date, slot, id, Email,Volunteeremail )
-       values(?, ?, ? ,?, ?)");
+       $stmt = $conn->prepare("insert into volunteerappointment(date, slot,timezoneid, id, Email,Volunteeremail )
+       values(?, ?,?, ? ,?, ?)");
       //$b=implode(",",$slot);
-       $stmt->bind_param("sssss",$date,$slot,$id,$Email, $Volunteeremail);
+       $stmt->bind_param("ssssss",$date,$slot,$timezoneid,$id,$Email, $Volunteeremail);
        $stmt->execute();
        if($stmt == TRUE){
       $sql = "SELECT * FROM uservolunteer WHERE  id = {$_REQUEST['id']}";
