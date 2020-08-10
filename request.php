@@ -92,7 +92,7 @@ input{
 .back{
   width: 99%;
   padding: 5rem;
-  height: 700px;
+  height: 800px;
   text-align:center;
 
   background-image: linear-gradient( rgb(255, 255, 255) 10%, rgb(204, 190, 240)100%);
