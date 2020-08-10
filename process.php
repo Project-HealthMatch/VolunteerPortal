@@ -313,21 +313,8 @@ die('Connect Error ('. mysqli_connect_errno() .') '
 else{
 $sql = "INSERT INTO uservolunteer (date, timezoneid, slot, FirstName, LastName, Email,Languages, countryCode,Phone, age,Gender,optional, opt )
 values ('$date','$timezoneid','$slot','$FirstName','$LastName','$Email','$Languages' ,'$countryCode', '$Phone', '$age', '$Gender', '$optional', '$opt')";
-if ($conn->query($sql)){
-
-}
-else{
-echo "Error: ". $sql ."
-". $conn->error;
-}
-$conn->close();
-}
-}
-else{
-echo "please enter your name , email, date and timeslot with timezone";
-die();
-}
-
+   
+   
     echo '<div style="text-align: center;">';
                        echo '<form method="POST" name="google-sheet" id="HideBlock">';
 
@@ -366,6 +353,21 @@ die();
 
 
        $conn->close();}
+if ($conn->query($sql)){
+
+}
+else{
+echo "Error: ". $sql ."
+". $conn->error;
+}
+$conn->close();
+}
+}
+else{
+echo "please enter your name , email, date and timeslot with timezone";
+die();
+}
+
        ?>
 
            <div id="initiallyHiddenBlock">
