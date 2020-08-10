@@ -391,8 +391,8 @@ body {
                              name = "slot" value = '. $_POST['slot'];' readonly>';
 
 
-                             echo'  <label for = "FirstName"> NAME </label>';
-                             echo'  <input type="text" class="form-control" id="email"
+                             echo'  <label> NAME </label>';
+                             echo'  <input type="text" class="form-control" 
                                name = "FirstName" value = '.$_POST['FirstName'];' readonly>';
 
                              echo'  <label for = "email"> USER EMAIL </label>';
