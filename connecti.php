@@ -105,7 +105,6 @@ input{
 }
 
 body {
-  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
 background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
       background-attachment: fixed;
       background-repeat: no-repeat;
