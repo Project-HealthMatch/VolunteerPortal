@@ -380,6 +380,7 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
              }
              else { echo "false";}
 
+         
 
               echo '<div style="text-align: center;">';
                        echo '<form method="POST" name="google-sheet" id="HideBlock">';
