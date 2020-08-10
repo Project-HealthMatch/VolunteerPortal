@@ -349,6 +349,12 @@ echo '<div style="text-align: center;">';
 
                    echo'  </form>';
 
+                  echo' <div id="initiallyHiddenBlock" style="text-align:center;">';
+echo'<h1>Thank You for Choosing HealthMatch.We shall connect you with a Volunteer soon!<h1>';
+       
+       
+echo'</div>';
+
 
 
 
@@ -367,6 +373,7 @@ echo "please enter your name , email, date and timeslot with timezone";
 die();
 }
 ?>
+
 
           </body>
 
