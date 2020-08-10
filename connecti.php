@@ -385,6 +385,7 @@ body {
                             echo ' <label for = "date"> APPOINTMENT DATE </label>';
                              echo '<input type="text" class="form-control" id="date"
                              name = "date" value = '.$_POST['date'];' readonly>';
+         
                             echo ' <label for = "slot"> SLOT </label>';
                              echo '<input type="text" class="form-control" id="slot"
                              name = "slot" value = '. $_POST['slot'];' readonly>';
@@ -399,7 +400,7 @@ body {
                                name = "Email" value = '.$_POST['Email'];' readonly>';
 
 
-                               echo'  <label> VOLUNTEER EMAIL </label>';
+                               echo'  <label for ="Volunteeremail"> VOLUNTEER EMAIL </label>';
                                echo'  <input type="email" class="form-control" id="email"
                                  name = "Volunteeremail"  value = '.$_POST['Volunteeremail'];' readonly>';
 
