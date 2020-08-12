@@ -343,6 +343,10 @@ echo '<div style="text-align: center;">';
                              echo'  <label for = "FirstName">FIRST NAME </label>';
                              echo'  <input type="text" class="form-control" id="FirstName"
                                name = "FirstName" value = '.filter_input(INPUT_POST, 'FirstName');' readonly>';
+   
+     echo'  <label for = "LastName">LAST NAME </label>';
+                             echo'  <input type="text" class="form-control" id="LastName"
+                               name = "LastName" value = '.filter_input(INPUT_POST, 'LastName');' readonly>';
 
                                  echo'  <label for = "Email">EMAIL </label>';
                              echo'  <input type="text" class="form-control"id="FirstName"
