@@ -199,7 +199,7 @@ background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
        font-family: "Poppins", sans-serif;
        text-transform: uppercase;
        margin-top: 1rem;
-       margin-left: 35%;
+       margin-left: 37%;
        cursor: pointer;
        transition: 0.5s;
      }
