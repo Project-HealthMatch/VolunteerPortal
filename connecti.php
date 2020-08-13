@@ -104,24 +104,16 @@ input{
   border-radius: 5px;
 }
 
-body {
-  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
-  
-background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-
-      font-family: "Vibur", cursive;
-      /*   the main font */
-      font-family: "Abel", sans-serif;
-
+ body {
+        background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+       background-image: linear-gradient(to top, #dfc2f8 0%, #c2dcee 100%);
         background-attachment: fixed;
         background-repeat: no-repeat;
 
         font-family: "Vibur", cursive;
         /*   the main font */
         font-family: "Abel", sans-serif;
-        margin-bottom: 1rem;
+
         /* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
       }
       .title{
