@@ -1473,7 +1473,8 @@ body {
   /* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
 }
 
-
+@media(min-width:900px)
+{
 .margin{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr ;
@@ -1481,7 +1482,7 @@ body {
   margin-left: 45rem;
   margin-right: 45rem;
 }
-
+}
                   </style>
 
             <body>
@@ -2023,7 +2024,8 @@ else
       <button type="submit" class=" submits " value="Submit"> Submit</button>
   </div>
 
-
+<br>
+<br>
   </form>
 
 
