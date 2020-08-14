@@ -23,6 +23,15 @@ else{
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+    type="text/javascript"
+    src="https://cdn.weglot.com/weglot.min.js"
+  ></script>
+  <script>
+    Weglot.initialize({
+      api_key: "wg_6595b397394b082513ae5269c8992a3d7",
+    });
+  </script>
    <style>
       @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
       * {
