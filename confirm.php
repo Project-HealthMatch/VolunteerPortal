@@ -1,14 +1,5 @@
 
-<?
-session_start();
 
-if($_SESSION["user"]==true){
-
-}
-else{
-    header("Location: index.html");
-}
-?> 
 <!DOCTYPE html>
 
    <html>
